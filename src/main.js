@@ -1,8 +1,11 @@
-import {createApp} from 'vue';
+import {createApp, configureCompat} from 'vue';
 import App from './App.vue';
 import './index.css';
 import '../node_modules/@rebilly/recomponents-next/dist/style.css';
 import {install} from '@rebilly/recomponents-next';
+
+
+if (!configureCompat) throw Error('Not running in compat mode!')
 
 const app = createApp(App);
 // Install registers all recomponents and directives
